@@ -7,3 +7,13 @@
 支持基本的数据拆分策略
 支持codis
 框架实现一些基本的业务逻辑和支持
+
+
+目录说明:
+	boot/ 框架内核文件
+	init/ 初始化文件
+	config/ 配置文件
+	lib/ 库文件
+	modules/ 底层模块
+	apps/ 应用
+	index.php 入口文件

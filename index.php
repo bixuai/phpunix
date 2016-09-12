@@ -1,3 +1,4 @@
 <?php
-echo 'hello world!';
-echo 'hehe';
+require 'boot/boot.php';
+phpunux::init();
+phpunux::start();
