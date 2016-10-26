@@ -14,12 +14,26 @@ init_apps::init();
 
 //路由
 
+
+
 class boot {
-   static function autoload($class) {
+    /*
+     * 没有规则的类，通过此静态数组寻找路径
+     */
+    static $s_class_path = array(
+        'phpunix' => 'core'
+    );
+    
+    static function autoload($class) {
        
        if (class_exists($class)) return ;
        
        $class = strtolower($class);
+       
+       if(isset(self::$s_class_path[$class])) {
+           include G_ROOT.self::$s_class_path[$class].'/'.$class.'.php';
+       }
+           
        if(strpos($class, '_') !== false) {
            list($folder) = explode('_', $class);
            $file = G_ROOT.$folder.'/'.$class.'.php';
@@ -28,3 +42,4 @@ class boot {
       
     }
 }
+

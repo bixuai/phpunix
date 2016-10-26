@@ -1,3 +1,4 @@
 <?php
 require 'boot/boot.php';
-//phpunix::start();
+
+phpunix::run();
